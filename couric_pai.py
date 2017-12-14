@@ -16,19 +16,6 @@ import traceback
 # =============================================================================
 
 # Reads the config file
-#config = ConfigParser.ConfigParser()
-#config.read("couricpaibot.cfg")
-
-#Reddit info
-#reddit = praw.Reddit(user_agent= "CouricPaiCon")
-#o = OAuth2Util.OAuth2Util(reddit, print_log = True)
-#o.refresh(force=True)
-
-#DB_USER = config.get("SQL", "user")
-#DB_PASS = config.get("SQL", "passwd")
-
-# Time when program was started
-#START_TIME = time.time()
 
 # Define database
 conn = sqlite3.connect('couricpai.db')
@@ -53,9 +40,7 @@ def data_read(comm):
 		return 0
 	else:
 		return 1
-#def data_read():
 create_table()
-#data_entry()
 
 # Define Login Function
 def bot_login():
@@ -104,20 +89,6 @@ def run_bot(r):
 				#f.write(comment.id + "\n")
 
 	time.sleep(1)
-
-# Function for retrieving the tracked posts
-#def get_saved_comments():
-#	if not os.path.isfile("comments_replied_to.txt"):
-#		comments_replied_to = []
-#	else:
-#		with open("comments_replied_to.txt", "r") as f:
-#			comments_replied_to = f.read()
-#			comments_replied_to = comments_replied_to.split("\n")
-
-#			return comments_replied_to
-
-#comments_replied_to = get_saved_comments()
-#print(comments_replied_to)
 
 r = bot_login()
 while True:
