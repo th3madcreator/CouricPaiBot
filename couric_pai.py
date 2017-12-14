@@ -15,8 +15,6 @@ import traceback
 # GLOBALS
 # =============================================================================
 
-# Reads the config file
-
 # Define database
 conn = sqlite3.connect('couricpai.db')
 c = conn.cursor()
